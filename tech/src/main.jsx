@@ -1,12 +1,15 @@
-// src/main.jsx
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App";
-import "./index.css"; // Optional for custom styles
+// main.jsx
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import './index.css'
+import { BrowserRouter } from 'react-router-dom';
 
-const root = ReactDOM.createRoot(document.getElementById("app"));
-root.render(
+
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter> {/* ✅ This fixes the issue */}
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
